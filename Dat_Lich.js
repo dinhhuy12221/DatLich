@@ -1,6 +1,5 @@
 
 let text_warn = document.getElementsByClassName('text-warn');
-
 // -----------khach-hang------------
 
 const khach_hang ={
@@ -51,8 +50,10 @@ const khach_hang ={
 }
 
 // -----------dich-vu------------
+
 var time_btn =document.getElementsByClassName('time-btn');
 var temp;
+
 const dich_vu={
 
     kt_chi_nhanh:function(){
@@ -99,7 +100,6 @@ const dich_vu={
         else{
             text_warn[2].style.color='white';
         }
-        console.log(temp);
     },
 
     ngay_dl:function(){
@@ -107,12 +107,25 @@ const dich_vu={
         let ngay = date.getDate();
         let thang = date.getMonth();
         let nam = date.getFullYear();
+        let hours = date.getHours();
+        let min = date.getMinutes();
+
 
         let bd_lich = nam+"-"+(thang + 1)+"-"+ngay;
         let kt_lich = nam+"-"+(thang + 1)+"-"+(ngay+2);
         let lich = document.getElementById('date-box');
         lich.setAttribute('min' , bd_lich);
         lich.setAttribute('max' , kt_lich);
+
+        khoa_khung_gio();
+
+        function khoa_khung_gio(){
+            for(let tb of time_btn){
+                let time = Number(tb.value);
+                if(time > hours)
+                    tb.disabled = true;
+            }
+        }
     },
     kt_ngay_dl:function(){
         let ngay_dl= document.getElementById('date-box');
@@ -134,5 +147,4 @@ function kiem_tra(){
     dich_vu.kt_chi_nhanh();
     khach_hang.kt_sdt();
     khach_hang.kt_ten();
-
 }
