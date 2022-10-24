@@ -1,0 +1,96 @@
+:root{
+    font-family: sans-serif;
+    font-weight: bold;
+    color:white;
+}
+body{
+    background-color:rgb(202, 160, 105);
+}
+.title{
+    font-family: 'Abril Fatface', cursive;
+    color:rgb(202, 160, 105);
+}
+p{
+    font-family: 'Special Elite', cursive;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+
+    background: rgb(46, 45, 45);
+    width:70%;
+    height: 200vh;
+
+    margin-left:50%;
+    margin-top:-10px;
+    margin-bottom:-10px;
+    transform: translateX(-50%);
+    padding:30px;
+}
+.flex-box{
+    align-self: center;
+    margin-right: 20px;
+    width: 60%;
+}
+.img{
+    width:70px;
+    height:70px;
+}
+.flex-box-1{
+    display: flex;
+    justify-content: center;
+}
+
+.input-box{
+    width: 98%;
+    height: 30px;
+    border-radius:5px;
+}
+/* #so-dien-thoai::-webkit-outer-spin-button,
+#so-dien-thoai::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} */
+
+.radio-box label{
+    background: white;
+    color:black;
+    height:40px;
+    margin: 10px;
+    border-radius: 10px;
+    line-height: 40px;
+
+    display: block;
+    cursor:pointer;
+}
+#submit-button{
+    text-align: center;
+    color:black;
+    width: 98%;
+    height: 40px;
+    border-radius:30px;
+}
+
+/* khung gio */
+
+.time-grid{
+    display: grid;
+
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(6,50px);
+    justify-content: center;
+    gap:5px;
+}
+.time-btn{
+    border-radius: 5px;
+    background: white;
+    color:black;
+    flex-grow: auto;
+}
+.time-btn:hover,
+#submit-button:hover,
+#chi-nhanh:hover{
+    background: rgb(213, 207, 207);
+    cursor:pointer;
+}
+/* ----- */

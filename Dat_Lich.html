@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Dat_Lich.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+            <div class="flex">
+                <img class="flex-box img" src="https://phatjack.github.io/barberwebproject/img/logo2.png" >
+                <div class="flex-box flex-box-1">
+                    <div class="box title"><h1>Đặt lịch</h1></div>
+                </div>
+                <div class="flex-box">
+                    <p class="title">Quý khách vui lòng cho biết thông tin</p>
+                    <p class="text-warn">* Vui lòng nhập thông tin bắt buộc</p>
+                    <div id="input"><input type="text" id="ho-ten" class="input-box" placeholder="Họ tên" name="hoten" value=""></div><span id="error-info-name"></span><br>
+                    <input type ="tel" id="so-dien-thoai" maxlength="10" pattern="[0-9]{10}" required class="input-box" placeholder="Số điện thoại" name="sdt">
+                    <p class="title">Tổng số khách</p>
+                    <input type="number" id="so-luong-khach" class="input-box" autocomplete="off" step="1" value="1" min="1" max="10" now="1">
+                    <p class="title">Thông tin dịch vụ</p>
+                    <p class="text-warn">* Chọn chi nhánh </p>
+                    <div class="radio-box">
+                    <label id="chi-nhanh" for="cn-1"><input type="radio" name="br" id="cn-1">TPHCMTPHCMTPHCM</label>
+                    <label id="chi-nhanh" for="cn-2"><input type="radio" name="br" id="cn-2">TPHCMTPHCMTPHCM</label>
+                    <label id="chi-nhanh" for="cn-3"><input type="radio" name="br" id="cn-3">TPHCMTPHCMTPHCM</label>
+                    <label id="chi-nhanh" for="cn-4"><input type="radio" name="br" id="cn-4">TPHCMTPHCMTPHCM</label>
+                    <p class="text-warn">* Chọn khung giờ</p>
+                </div>
+                </div>
+                    <div class="flex-box">
+                        <div class="time-grid">
+                            <button class="time-btn ">9:00</button>
+                            <button class="time-btn">10:00</button>
+                            <button class="time-btn">11:00</button>
+                            <button class="time-btn">12:00</button>
+                            <button class="time-btn">13:00</button>
+                            <button class="time-btn">14:00</button>
+                            <button class="time-btn">15:00</button>
+                            <button class="time-btn">16:00</button>
+                            <button class="time-btn">17:00</button>
+                            <button class="time-btn">18:00</button>
+                            <button class="time-btn">19:00</button>
+                            <button class="time-btn">20:00</button>
+                            <button class="time-btn">21:00</button>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                    <p class="text-warn">* Ngày đặt lịch</p>
+                    <input type ="date" id="date-box" style="height:30px;width:150px;"> 
+                    <p class="title">Yêu cầu kỹ thuật viên</p>
+                    <input type ="search" list="employee" class="input-box" ><span class="text-warn"></span>
+                    <datalist id="employee">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </datalist>
+                    <p class="title">Dịch vụ</p>
+                    <input type="search" list="service" class="input-box">
+                    <datalist id="service">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </datalist>
+                    <p>
+                    <button onclick="kiem_tra()" id="submit-button" type="submit">Thêm dịch vụ</button>
+                </div>
+            </div>
+    <script src="Dat_Lich.js"></script>
+</body>
+</html>
