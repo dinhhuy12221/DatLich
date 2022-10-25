@@ -64,11 +64,10 @@ p{
     cursor:pointer;
 }
 #submit-button{
-    text-align: center;
     color:black;
-    width: 98%;
+    width: 300px;
     height: 40px;
-    border-radius:30px;
+    border-radius:10px;
 }
 
 /* khung gio */

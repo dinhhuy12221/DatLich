@@ -92,14 +92,24 @@ const dich_vu={
             }
         )}
     },
+    kt_ngay_dl:function(){
+        let lich= document.getElementById('date-box');
+        if(lich.value==""){
+            lich.focus();
+            text_warn[2].style.color = 'red';
+        }
+        else{
+            text_warn[2].style.color = 'white';
+        }
+    },
 
     kt_khung_gio: function(){
         if(typeof temp == 'undefined'){
-            text_warn[2].style.color='red';
+            text_warn[3].style.color='red';
             time_btn[0].focus();
         }
         else{
-            text_warn[2].style.color='white';
+            text_warn[3].style.color='white';
         }
     },
 
@@ -111,10 +121,11 @@ const dich_vu={
         let nam = date.getFullYear();
         let hours = date.getHours()
 
-        var bd_lich = nam+"-"+(thang + 1)+"-"+ngay;
-        var kt_lich = nam+"-"+(thang + 1)+"-"+(ngay+2);
-        lich.setAttribute('min' , bd_lich);
-        lich.setAttribute('max' , kt_lich);
+        var ngay_1 = nam+"-"+(thang + 1)+"-"+ngay;
+        var ngay_2 = nam+"-"+(thang + 1)+"-"+(ngay+1);
+        var ngay_3 = nam+"-"+(thang + 1)+"-"+(ngay+2);
+        lich.setAttribute('min' , ngay_1);
+        lich.setAttribute('max' , ngay_3);
 
         //khoa khung gio
         lich.addEventListener('change', function(){
@@ -122,8 +133,14 @@ const dich_vu={
         let lich_value_temp = lich.value;
             for(let tb of time_btn){
                 let time = Number(tb.value);
-                if(time <= hours && String(lich_value_temp) == String(bd_lich)){
+                if(String(lich_value_temp) != String(ngay_1) && String(lich_value_temp) != String(ngay_2) && String(lich_value_temp) != String(ngay_3)){
                     tb.disabled = true;
+                    tb.hover = 'none'
+                    tb.style.opacity = '0.5';
+                }
+                else if(time <= hours && String(lich_value_temp) == String(ngay_1)){
+                    tb.disabled = true;
+                    tb.hover = 'none'
                     tb.style.opacity = '0.5';
                 }
                 else{
@@ -132,16 +149,6 @@ const dich_vu={
                 }
             }
         })
-    },
-    kt_ngay_dl:function(){
-        let ngay_dl= document.getElementById('date-box');
-        if(ngay_dl.value==""){
-            ngay_dl.focus();
-            text_warn[3].style.color = 'red';
-        }
-        else{
-            text_warn[3].style.color = 'white';
-        }
     }
 }
 dich_vu.ngay_dl();
