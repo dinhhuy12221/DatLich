@@ -52,6 +52,7 @@ const khach_hang ={
 // -----------dich-vu------------
 
 var time_btn =document.getElementsByClassName('time-btn');
+var lich = document.getElementById('date-box');
 var temp;
 
 const dich_vu={
@@ -102,30 +103,35 @@ const dich_vu={
         }
     },
 
+
     ngay_dl:function(){
         let date = new Date();
         let ngay = date.getDate();
         let thang = date.getMonth();
         let nam = date.getFullYear();
-        let hours = date.getHours();
-        let min = date.getMinutes();
+        let hours = date.getHours()
 
-
-        let bd_lich = nam+"-"+(thang + 1)+"-"+ngay;
-        let kt_lich = nam+"-"+(thang + 1)+"-"+(ngay+2);
-        let lich = document.getElementById('date-box');
+        var bd_lich = nam+"-"+(thang + 1)+"-"+ngay;
+        var kt_lich = nam+"-"+(thang + 1)+"-"+(ngay+2);
         lich.setAttribute('min' , bd_lich);
         lich.setAttribute('max' , kt_lich);
 
-        khoa_khung_gio();
-
-        function khoa_khung_gio(){
+        //khoa khung gio
+        lich.addEventListener('change', function(){
+            console.log(lich.value)
+        let lich_value_temp = lich.value;
             for(let tb of time_btn){
                 let time = Number(tb.value);
-                if(time > hours)
+                if(time <= hours && String(lich_value_temp) == String(bd_lich)){
                     tb.disabled = true;
+                    tb.style.opacity = '0.5';
+                }
+                else{
+                    tb.disabled = false;
+                    tb.style.opacity = '1';
+                }
             }
-        }
+        })
     },
     kt_ngay_dl:function(){
         let ngay_dl= document.getElementById('date-box');
