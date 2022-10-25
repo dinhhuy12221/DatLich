@@ -145,7 +145,7 @@ const dich_vu={
                 }
                 else{
                     tb.disabled = false;
-                    temp = 1;
+                    temp = 0;
                     tb.style.opacity = '1';
                 }
             }
