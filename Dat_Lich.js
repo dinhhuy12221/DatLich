@@ -135,16 +135,17 @@ const dich_vu={
                 let time = Number(tb.value);
                 if(String(lich_value_temp) != String(ngay_1) && String(lich_value_temp) != String(ngay_2) && String(lich_value_temp) != String(ngay_3)){
                     tb.disabled = true;
-                    tb.hover = 'none'
+                    temp = undefined;
                     tb.style.opacity = '0.5';
                 }
                 else if(time <= hours && String(lich_value_temp) == String(ngay_1)){
                     tb.disabled = true;
-                    tb.hover = 'none'
+                    temp = undefined;
                     tb.style.opacity = '0.5';
                 }
                 else{
                     tb.disabled = false;
+                    temp = 1;
                     tb.style.opacity = '1';
                 }
             }
