@@ -94,7 +94,7 @@ const dich_vu={
     },
     kt_ngay_dl:function(){
         let lich= document.getElementById('date-box');
-        if(lich.value==""){
+        if(String(lich.value) != String(ngay_1) && String(lich.value) != String(ngay_2) && String(lich.value) != String(ngay_3)){
             lich.focus();
             text_warn[2].style.color = 'red';
         }
