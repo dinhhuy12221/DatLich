@@ -1,7 +1,7 @@
 
 let text_warn = document.getElementsByClassName('text-warn');
 // -----------khach-hang------------
-
+// --- NEW CHANGE---
 const khach_hang ={
     ten_kh : "",
     so_dt : "",
